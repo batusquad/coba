@@ -24,7 +24,7 @@ const ForgotPasswordForm = () => {
                         <br />
                       </div>
                       <div className="text-center">
-                        <a role='button' onClick={() => navigate("/Login")} className="btn btn-primary btn-user btn-block">
+                        <a role='button' onClick={() => navigate("/ResetPassword")} className="btn btn-primary btn-user btn-block">
                           Reset Password
                         </a>
                       </div>
