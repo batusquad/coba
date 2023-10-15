@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 *{
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
@@ -41,6 +39,13 @@
 .np-main input{
     border: none;
     text-align: center;
+    width: 100px;
+}
+
+.np-main table {
+    border: black;
+    width: 100px;
+    margin-left: 100px;
 }
 
 table {
@@ -50,6 +55,7 @@ table {
 .np-main td{
     height: 30px;
 }
+
 .np-foot{
     text-align: right;
     margin-right: 150px;
@@ -60,6 +66,101 @@ table {
     width: 90px;
 }
 
-.submit{
+.spd{
+    text-align: center;
+}
+
+.sprr{
+    display: flex;
+    text-align: center;
     
 }
+.rock{
+    width: 5%;
+}
+.batu{
+    text-align: center;
+}
+
+.header-container{
+    margin-left:28%;
+}
+
+.header-container input{ 
+    text-align: center;
+}
+
+.sprr-head{
+    display: block;
+    text-align: center;
+}
+
+.sprr-head input{
+    width: 30px;
+    margin-bottom: 30px;
+}
+
+
+.sprr-main{
+    text-indent: 45px;
+}
+
+.sprr-foot{
+    margin-top: 300px;
+    text-align: right;
+}
+
+.sur-head{
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.sprr-1 input{
+    border: none;
+}
+
+#content{
+    margin: 150px;
+    overflow: hidden;
+}
+
+  .spd-table {
+    width: 100%;
+  }
+  
+  .spd-main table{
+    border-collapse: collapse;
+  }
+
+  .spd-main table,tr,th,td, tr {
+        border: 1px solid black;
+      }
+
+  .spd-main input{
+    border: none;
+  }
+
+  .kotak{
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px;
+  }
+
+.spb-main{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+  .spb-foot td, tr{
+    border: none;
+  }
+
+  .tempat{
+    float: right;
+  }
+
+
+  .spb-main input{
+    width: 170px;
+  }

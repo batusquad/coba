@@ -24,7 +24,7 @@ const NP = () => {
           <input type="text" placeholder="(TANGGAL KEGIATAN)" />
         </div>
         <div className="np-main">
-          <table className="table">
+          <table className="table" width="10%">
             <thead>
               <tr>
                 <th>No</th>

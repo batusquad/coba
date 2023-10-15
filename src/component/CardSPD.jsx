@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"; // Import the useNavigate hook
 import { AiOutlineFilePdf } from "react-icons/ai";
 
 
-const CardSUD = ({ title, link }) => {
+const CardSPD = ({ title, link }) => {
   const navigate = useNavigate(); // Initialize the navigation function using useNavigate
 
   return (
@@ -13,7 +13,7 @@ const CardSUD = ({ title, link }) => {
           <div className="row no-gutters align-items-center">
             <div className="col mr-2">
               <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">{title}</div>
-              <button onClick={() => navigate("/SUD")} className="btn btn-primary">DOC</button>
+              <button onClick={() => navigate("/SPD")} className="btn btn-primary">DOC</button>
             </div>
             <div className="col-auto ">
               <AiOutlineFilePdf/>
@@ -25,4 +25,4 @@ const CardSUD = ({ title, link }) => {
   );
 };
 
-export default CardSUD;
+export default CardSPD;

@@ -1,9 +1,9 @@
 import React from "react";
 import CardNP from "../component/CardNP";
-import CardSP from "../component/CardSP";
+import CardSUR from "../component/CardSUR";
 import CardSPB from "../component/CardSPB";
 import CardSPRR from "../component/CardSPRR";
-import CardSPD from "../component/CardSUD";
+import CardSPD from "../component/CardSPD";
 import CardSUK from "../component/CardSUK";
 import SideBar from "../component/SideBar";
 import '../style/App.css'
@@ -23,7 +23,7 @@ const MainPage = () => {
             <CardNP title="Nota Pembicara"  /> {/* Use NP component as JSX element */}
             <CardSPRR title="Surat Peminjaman Ruang Rapat" />
             <CardSPB title="Surat Pengajuan Biaya" />
-            <CardSP title="Surat Perjalanan" />
+            <CardSUR title="Surat Undangan Rapat" />
             <CardSUK title="Surat Usulan Kegiatan" />
             <CardSPD title="Surat Perjalanan Dinas" />
             {/* Add more cards as needed */}
