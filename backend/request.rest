@@ -1,0 +1,33 @@
+GET http://localhost:5014/spd
+
+###
+GET http://localhost:5014/suk
+
+###
+GET http://localhost:5014/spd/1
+
+###
+POST http://localhost:5014/spd
+Content-Type: application/json
+
+{
+    "dokumen" : "asdasd",
+    "jabatan" : "asdads",
+    "namapegawai" : "asdasd",
+    "maksudperjalanandinas" : "asdasd",
+    "tujuan" : "asdads",
+    "angkutan" : "asdads"
+}
+
+###
+PATCH http://localhost:80/users/1
+Content-Type: application/json
+
+{
+    "name" : "M Fikri",
+    "email" : "mfikri@gmail.com",
+    "gender" : "Male"
+}
+
+###
+DELETE http://localhost:80/users/2
