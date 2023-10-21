@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
+import axios from "axios"
 import "../style/Card.css"
 
 const NP = () => {
+  const [users,setUser] = useState([]);
+
+  useEffect(() =>{
+      getUsers();
+  },[]);
+  const getUsers = async () =>{
+      const response = await axios.get('http://localhost:5014/users');
+      setUser(response.data)
+  }
+  
   return (
     <div>
       <div id="content">
@@ -37,29 +48,17 @@ const NP = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <input type="text" />
-                </td>
-                <td>
-                  <input type="text" />
-                </td>
-                <td>
-                  <input type="text" />
-                </td>
-                <td>
-                  <input type="text" />
-                </td>
-                <td>
-                  <input type="text" />
-                </td>
-                <td>
-                  <input type="text" />
-                </td>
-                <td>
-                  <input type="text" />
-                </td>
-              </tr>
+            {users.map((user,index)=> (
+                        <tr key={user.id}>
+                        <td>{index+1}</td>
+                        <td>{user.nama}</td>
+                        <td>{user.jabatan}</td>
+                        <td>{user.honorarium}</td>
+                        <td>{user.pajak}</td>
+                        <td>{user.transport}</td>
+                        <td>{user.keterangan}</td>
+                    </tr>
+                    ))}
             </tbody>
           </table>
         </div>

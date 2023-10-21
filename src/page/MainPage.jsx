@@ -18,8 +18,6 @@ const MainPage = () => {
             <h1 className="h3 mb-0 text-gray-800">Document</h1>
           </div>
           <div className="row">
-            {/* Reusing the DocumentCard component */}
-            
             <CardNP title="Nota Pembicara"  /> {/* Use NP component as JSX element */}
             <CardSPRR title="Surat Peminjaman Ruang Rapat" />
             <CardSPB title="Surat Pengajuan Biaya" />

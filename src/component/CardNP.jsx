@@ -13,7 +13,7 @@ const CardNP = ({ title, link }) => {
           <div className="row no-gutters align-items-center">
             <div className="col mr-2">
               <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">{title}</div>
-              <button onClick={() => navigate("/NP")} className="btn btn-primary">DOC</button>
+              <button onClick={() => navigate("/FormNP")} className="btn btn-primary">DOC</button>
             </div>
             <div className="col-auto ">
               <AiOutlineFilePdf/>

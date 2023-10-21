@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
+import axios from "axios"
 import rock from "../assets/rock.svg"
 
 const SPRR = () => {
+    const [users,setUser] = useState([]);
+
+    useEffect(() =>{
+        getUsers();
+    },[]);
+    const getUsers = async () =>{
+        const response = await axios.get('http://localhost:5014/sprr');
+        setUser(response.data)
+    }
+
     return(
         <div id="content">
         <div className="sprr-1">
@@ -18,25 +29,29 @@ const SPRR = () => {
                 <strong>Nomor : <input type="text" placeholder="..." /></strong>
                 </div>
             </div>
-            <div className="sprr-body">
-                <p>YTH. : <input type="text" placeholder="..."/></p>
-                <p>Dari : <input type="text" placeholder="..."/></p>
-                <p>Hal : <input type="text" placeholder="..."/></p>
-                <p>Lampiran : <input type="text" placeholder="..."/></p>
-                <p>Tanggal : <input type="text" placeholder="..."/></p>
-            </div>
+            {users.map((user,index)=> (
+                <div className="sprr-body" key={user.id}>
+                    <p>YTH. : {user.yth} </p>
+                    <p>Dari : {user.dari}</p>
+                    <p>Hal : {user.hal}</p>
+                    <p>Lampiran : {user.lampiran}</p>
+                    <p>Tanggal : {user.tanggal}</p>
+                </div>
+            ))}
             <hr/>
+            {users.map((user,index)=> (
             <div className="sprr-main">
-                <p> Bersama ini dengan hormat kami sampaikan bahwa (Nama Perusahaan) akan
-                    melaksanakan rapat <input type="text" placeholder="..."/> sehubungan dengan hal tersebut kami mohon bantuan peminjaman
-                    ruang rapat lantai <input type="text" placeholder="..."/> untuk keperluan acara tersebut pada:</p>
+                <p> Bersama ini dengan hormat kami sampaikan bahwa divisi {user.divisi} akan
+                    melaksanakan rapat {user.rapat} sehubungan dengan hal tersebut kami mohon bantuan peminjaman
+                    ruang rapat lantai {user.lantai} untuk keperluan acara tersebut pada:</p>
 
-                    <p>Hari/Tanggal : <input type="text" placeholder="..."/></p>
-                    <p>Waktu : <input type="text" placeholder="..."/></p>
+                    <p>Hari/Tanggal : {user.hari}, {user.tanggalrapat}</p>
+                    <p>Waktu : {user.waktu}</p>
 
                     <p>Demikian kami sampaikan, atas bantuan dan kerja sama yang baik kami haturkan terima
-                    kasih. </p>
+                    kasih. </p>   
             </div>
+            ))}
             <div className="sprr-foot">
                 <input type="text" placeholder="Nama Atasan" />
             </div>

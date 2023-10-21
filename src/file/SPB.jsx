@@ -1,7 +1,17 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import rock from "../assets/rock.svg"
 
 const SPB = () => {
+    const [users,setUser] = useState([]);
+
+    useEffect(() =>{
+        getUsers();
+    },[]);
+    const getUsers = async () =>{
+        const response = await axios.get('http://localhost:5014/spb');
+        setUser(response.data)
+    }
     return(
 
         <div id="content">
@@ -18,26 +28,34 @@ const SPB = () => {
                 </div>
                 <div className="spb-main">
                     <table>
-                        <tr>
-                            <td>Kode</td>
-                            <td>Uraian</td>
-                            <td>Vol</td>
-                            <td>Satuan</td>
-                            <td>Harga Satuan</td>
-                            <td>Jumlah</td>
-                        </tr>
-                        <tr>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
-                            <td><input type="number" /></td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <td>Kode</td>
+                                <td>Uraian</td>
+                                <td>Vol</td>
+                                <td>Satuan</td>
+                                <td>Harga Satuan</td>
+                                <td>Jumlah</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {users.map((user,index)=> (
+                            <tr key={user.id}>
+                                    <td>{index+1}</td>
+                                    <td>{user.uraian}</td>
+                                    <td>{user.vol}</td>
+                                    <td>{user.satuan}</td>
+                                    <td>{user.hargasatuan}</td>
+                                    <td>{user.jumlah}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                    <tfoot>
                         <tr>
                             <td colSpan={5}>Total Biaya</td>
                             <td></td>
                         </tr>
+                     </tfoot>
                     </table>
                 </div>
                 <div className="spb-foot">
@@ -45,12 +63,14 @@ const SPB = () => {
                     <br/>
                     <br/>
                     <table>
+                        <thead>
                         <tr>
                             <td>Setuju Dibayar,</td>
                             <td>Mengetahui,</td>
                             <td>PIC, </td>
                             <td>Pemohon, </td>
                         </tr>
+                        </thead>
                         <br/>
                         <br/>
                         <br/>
@@ -58,12 +78,14 @@ const SPB = () => {
                         <br/>
                         <br/>
                         <br/>
+                        <tbody>
                         <tr>
                             <td><input type="text" placeholder="(Nama)"/></td>
                             <td><input type="text" placeholder="(Nama)"/></td>
                             <td><input type="text" placeholder="(Nama)"/></td>
                             <td><input type="text" placeholder="(Nama)"/></td>
                         </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
