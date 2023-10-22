@@ -1,0 +1,27 @@
+.containers {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .custom-table, th,tr, td, tr {
+    text-align: center;
+    border: 1px solid black;
+    padding: 20px;
+  }
+  
+  .checkbox {
+    width: 20px;
+    height: 20px;
+  }  
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+  }
+
