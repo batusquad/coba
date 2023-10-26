@@ -8,6 +8,7 @@ import Spb from './isi/Spb';
 import Sur from './isi/Sur';
 import Suk from './isi/Suk';
 import Spd from './isi/Spd';
+import Lembarverif from './Lembarverif';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/Sur" element={<Sur />} />
       <Route path="/Suk" element={<Suk />} />
       <Route path="/Spd" element={<Spd />} />
+      <Route path="/Lembarverif" element={<Lembarverif />} />
     </Routes>
   );
 }

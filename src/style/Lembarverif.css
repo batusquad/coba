@@ -1,0 +1,39 @@
+.lv-1 {
+    display: flex;
+    text-align: center;
+}
+.header-container {
+    text-align: center;
+    margin-left: 1%;
+    margin-top: 7%;
+}
+
+.rock {
+    width: 5%;
+    margin-left: 12%;
+}
+
+.isi2 {
+    margin-left: 12%;
+    font-weight: 600;
+}
+
+.input1 {
+    margin-left: 90px;
+}
+
+.input2 {
+    margin-left: 18px;
+}
+
+.tabel1{
+
+    margin-left: 12%;
+    margin-bottom: 10%;
+    font-weight: bold;
+}
+
+.surat {
+    text-align: left;
+}
+

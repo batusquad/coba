@@ -1,3 +1,14 @@
+
+/* Content */
+.content {
+  margin-left: 260px; /* Margin kiri untuk mengakomodasi lebar sidebar */
+}
+
+.titleh {
+  margin-top: 20px;
+}
+
+
 .titleh {
   text-align: center;
   font-size: 24px;

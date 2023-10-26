@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import { useNavigate } from 'react-router-dom';
 
+
 const Home = () => {
     const navigate = useNavigate();
 
@@ -87,7 +88,7 @@ const Home = () => {
         </div>
       </div>
       <div className="text-center mt-3">
-        <button className="btn btn-primary">Submit</button>
+        <button onClick={() => navigate("/Lembarverif")} className="btn btn-primary">Submit</button>
       </div>
     </div>
   );
