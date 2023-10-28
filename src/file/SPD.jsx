@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import Layout from "../page/Layout";
 
 const SPD = () => {
 
@@ -18,6 +19,7 @@ const SPD = () => {
     }
 
     return(
+        <Layout>
         <div>
             <div id="content">
                 <div className="SPD-head">
@@ -42,7 +44,7 @@ const SPD = () => {
                 <div className="spd-main">
                 <table className="table">
                 {spb.map((user,index)=> (
-                    <tbody key={user.id}>{index+1}
+                    <tbody key={user.id}>
                         <tr>
                             1.
                             <td className="table-cell">Dokumen</td>
@@ -141,6 +143,7 @@ const SPD = () => {
                 </div>
             </div>
         </div>
+        </Layout>
     )
 };
 

@@ -1,38 +1,40 @@
 import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { IoPerson, IoPricetag, IoHome, IoDocumentSharp } from "react-icons/io5";
+import "bulma/css/bulma.min.css"
 
-const SideBar = () => {
+const Sidebar = () => {
+
+  const logout = () => {
+    dispatch(LogOut());
+    dispatch(reset());
+    navigate("/");
+  };
+
   return (
     <div>
-      <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        <li className="nav-item">
-          <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            <div className="sidebar-brand-icon rotate-n-15">
-              <i className="fas fa-laugh-wink"></i>
-            </div>
-            <div className="sidebar-brand-text mx-3">BatuSquad <sup></sup></div>
-          </a>
-        </li>
-
-        <li className="nav-item">
-          <a className="nav-link" href="index.html">
-            <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-
-        <li className="nav-item">
-          <div className="sidebar-heading">Interface</div>
-        </li>
-
-        <li className="nav-item active">
-          <a className="nav-link" href="cards.html">
-            <i className="fas fa-fw fa-cog"></i>
-            <span>Pra-usulan</span>
-          </a>
-        </li>
-      </ul>
+      <aside className="menu pl-2 has-shadow">
+        <p className="menu-label">General</p>
+        <ul className="menu-list">
+          <li>
+            <NavLink to={"/pra-usulan"}>
+              <IoDocumentSharp /> Document
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/verifikator"}>
+              <IoPricetag /> Usulan
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/"}>
+              <IoHome /> Dashboard
+            </NavLink>
+          </li>
+        </ul>
+      
+      </aside>
     </div>
   );
 };
-
-export default SideBar;
+export default Sidebar;

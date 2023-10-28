@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Layout from '../page/Layout'
 
 const FormSUR = () => {
     const [nomor, setNomor] = useState("")
@@ -46,6 +47,7 @@ const FormSUR = () => {
 
 
   return (
+    <Layout>
     <div>
       <div className="columns mt-5 is-centered">
         <div className="column is-half">
@@ -141,6 +143,7 @@ const FormSUR = () => {
         </div>
       </div>
     </div>
+    </Layout>
   )
 }
 

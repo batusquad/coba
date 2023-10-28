@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios"
 import "../style/Card.css"
+import Layout from '../page/Layout';
 
 const NP = () => {
   const [users,setUser] = useState([]);
@@ -14,6 +15,7 @@ const NP = () => {
   }
   
   return (
+    <Layout>
     <div>
       <div id="content">
         <div className="np-head">
@@ -84,6 +86,7 @@ const NP = () => {
       ></iframe>
       {/* Your script imports */}
     </div>
+    </Layout>
   );
 };
 

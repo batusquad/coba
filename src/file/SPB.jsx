@@ -13,7 +13,7 @@ const SPB = () => {
         setUser(response.data)
     }
     return(
-
+        
         <div id="content">
             <div className="sprr-1">
                 <div className="sprr">

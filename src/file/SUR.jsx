@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios"   
 import rock from "../assets/rock.svg"
+import Layout from "../page/Layout.jsx"
 
 
 const SUR = () => {
@@ -15,6 +16,7 @@ const SUR = () => {
     }
 
     return(
+        <Layout>
         <div id="content">
             <div className="sprr-1">
             <div className="sprr">
@@ -66,6 +68,7 @@ const SUR = () => {
             ))}
             </div>
         </div>
+        </Layout>
     );
 };
 

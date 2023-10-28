@@ -1,19 +1,18 @@
-import React from "react";
+import React from 'react'
 import CardNP from "../component/CardNP";
 import CardSUR from "../component/CardSUR";
 import CardSPB from "../component/CardSPB";
 import CardSPRR from "../component/CardSPRR";
 import CardSPD from "../component/CardSPD";
 import CardSUK from "../component/CardSUK";
-import SideBar from "../component/SideBar";
-import '../style/App.css'
-import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from './Layout'
+import "bulma/css/bulma.min.css"
 
 const MainPage = () => {
-    return (
-      <div className="wrapper">
-        <SideBar />
-        <div className="container-fluid">
+  return (
+    <Layout>
+    <div className='wrapper'>
+      <div className="container-fluid">
           <div className="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 className="h3 mb-0 text-gray-800">Document</h1>
           </div>
@@ -27,8 +26,9 @@ const MainPage = () => {
             {/* Add more cards as needed */}
           </div>
         </div>
-      </div>
-    );
-};
+    </div>
+    </Layout>
+  )
+}
 
-export default MainPage;
+export default MainPage

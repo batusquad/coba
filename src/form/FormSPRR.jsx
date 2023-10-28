@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Layout from '../page/Layout'
 
 const FormNP = () => {
     const [yth, setYth] = useState("")
@@ -41,6 +42,7 @@ const FormNP = () => {
 
 
   return (
+    <Layout>
     <div>
       <div className="columns mt-5 is-centered">
         <div className="column is-half">
@@ -118,6 +120,7 @@ const FormNP = () => {
         </div>
       </div>
     </div>
+    </Layout>
   )
 }
 
