@@ -31,3 +31,47 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:80/users/2
+
+
+// create user
+###
+POST  http://localhost:5014/login
+Content-Type: application/json
+
+{
+    "name" : "dede",
+    "email" : "dede@gmail.com",
+    "password" : "dede",
+    "confPassword" : "dede",
+    "role" : "user"
+}
+
+###
+GET  http://localhost:5014/login
+
+###
+GET  http://localhost:5014/login/6c690d7f-3db7-41c2-b58c-d696e2186434
+
+# login user
+###
+POST  http://localhost:5014/loginuser
+Content-Type: application/json
+
+{
+    "email" : "surya@gmail.com",
+    "password" : "mahar"
+}
+###
+POST  http://localhost:5014/loginuser
+Content-Type: application/json
+
+{
+    "email" : "mahardhika@gmail.com",
+    "password" : "mahar"
+}
+
+###
+GET  http://localhost:5014/me
+
+###
+DELETE http://localhost:5014/logOut
