@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
-import Layout from './Layout';
+import Layout from '../page/Layout';
 
-class Dashboard extends Component {
+class DropdownMenu extends Component {
   render() {
     return (
-          <Layout>
             <div>
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic"> Pilih Status </Dropdown.Toggle>
@@ -16,9 +15,8 @@ class Dashboard extends Component {
                     </Dropdown.Menu>
                 </Dropdown>
             </div>
-            </Layout>
     );
   }
 }
 
-export default Dashboard;
+export default DropdownMenu;

@@ -1,16 +1,26 @@
-import React from 'react'
-import "../style/Sur.css"
+import React, {useState, useEffect} from 'react'
+import "../style/Np.css"
 import { useNavigate } from 'react-router-dom';
 import Layout from '../page/Layout';
+import axios from 'axios';
 
 const Surv = () => {
+  const [users,setUser] = useState([]);
+
+  useEffect(() =>{
+      getUsers();
+  },[]);
+  const getUsers = async () =>{
+      const response = await axios.get('http://localhost:5014/users/');
+      setUser(response.data)
+  }
   const navigate = useNavigate();
 
   return (
     <Layout>
     <div className="containers">
-      <h1 className="title">Acc Request Surat Undangan Rapat</h1>
-      <table responsive bordered hover className="custom-table">
+      <h1 className="title">Acc Request Nota Pembicara</h1>
+      <table >
         <thead>
           <tr>
             <th>Tanggal Request</th>
@@ -19,35 +29,21 @@ const Surv = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2023-10-20</td>
-            <td>dede tambunan</td>
-            <td>
-              <input type="checkbox" className="checkbox" />
-            </td>
-          </tr>
-          <tr>
-            <td>2023-10-21</td>
-            <td>rio miranda leva</td>
-            <td>
-              <input type="checkbox" className="checkbox" />
-            </td>
-          </tr>
-          <tr>
-            <td>2023-10-22</td>
-            <td>aniq mursidayanti</td>
-            <td>
-              <input type="checkbox" className="checkbox" />
-            </td>
-          </tr>
+        {users && users.map((user,index)=> (
+                        <tr key={user.id}>
+                        <td>{user.tanggal}</td>
+                        <td>{user.nama}</td>          
+                        <td><button onClick={() => navigate("/SUR")} className="btn btn-primary verif">DOC</button></td>
+                    </tr>
+                    ))}
         </tbody>
       </table>
       <div className="text-center mt-3">
-        <button onClick={() => navigate("/Home")} className="btn btn-primary">Submit</button>
+        <button onClick={() => navigate("/verifikator")} className="btn btn-primary ">Submit</button>
       </div>
     </div>
     </Layout>
   );
-}
+;}
 
 export default Surv

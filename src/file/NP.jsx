@@ -2,8 +2,11 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios"
 import "../style/Card.css"
 import Layout from '../page/Layout';
+import { useNavigate } from 'react-router-dom';
 
 const NP = () => {
+
+  
   const [users,setUser] = useState([]);
 
   useEffect(() =>{
@@ -18,24 +21,30 @@ const NP = () => {
     <Layout>
     <div>
       <div id="content">
-        <div className="np-head">
+        {users.map((user,index)=> (
+        <div className="np-head" >
           <p>
-            Lampiran I : <input type="text" placeholder="..." />
+            Lampiran I : {user.lampiran}
           </p>
           <p>
-            Nomor : <input type="text" placeholder="..." />
+            Nomor : {user.nomor}
           </p>
-          <p>
-            Tanggal : <input type="text" placeholder="..." />
-          </p>
+            <p key={user.id}>
+              Tanggal : {user.tanggal}
+            </p>
         </div>
+        ))}
         <div className="np-title">
           <strong>NARASUMBER/PEMBICARA</strong>
           <br />
-          <input type="text" placeholder="(NAMA KEGIATAN)" />
+        {users.map((user,index)=> (
+           <p key={user.id + "namakegiatan"}>{user.namakegiatan}</p>
+          ))}
           <br />
-          <input type="text" placeholder="(TANGGAL KEGIATAN)" />
-        </div>
+        {users.map((user,index)=> (
+           <p key={user.id + "tanggalkegiatan"}>{user.tanggalkegiatan}</p>
+        ))} 
+          </div>
         <div className="np-main">
           <table className="table" width="10%">
             <thead>
@@ -71,20 +80,15 @@ const NP = () => {
           <br />
           <br />
           <br />
-          <input type="text" placeholder="Tanda Tangan" />
           <br />
-          <input type="text" placeholder="Nama" />
+          {users.map((user,index)=> (
+            <p>{user.namadirektur}</p>
+          ))}
         </div>
       </div>
-      <button id="btn-one" className="submit btn btn-success btn-lg">
-        Print
+      <button  type='submit'  id="btn-one" className="submit btn btn-success btn-lg">
+        submit
       </button>
-      <iframe
-        id="frame"
-        style={{ width: "100%", border: "0", height: "0" }}
-        src="/NP"
-      ></iframe>
-      {/* Your script imports */}
     </div>
     </Layout>
   );

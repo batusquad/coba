@@ -55,7 +55,9 @@ const SPRR = () => {
             </div>
             ))}
             <div className="sprr-foot">
-                <input type="text" placeholder="Nama Atasan" />
+            {users.map((user,index)=> (
+                <p>{user.yth}</p>
+            ))}
             </div>
         </div>
         </div>

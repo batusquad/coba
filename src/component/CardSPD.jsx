@@ -13,7 +13,7 @@ const CardSPD = ({ title, link }) => {
           <div className="row no-gutters align-items-center">
             <div className="col mr-2">
               <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">{title}</div>
-              <button onClick={() => navigate("/FormSPD")} className="btn btn-primary">DOC</button>
+              <button onClick={() => navigate("/FormSPD")} className="btn btn-primary klik">DOC</button>
             </div>
             <div className="col-auto ">
               <AiOutlineFilePdf/>

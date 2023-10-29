@@ -49,67 +49,67 @@ const FormSUK = () => {
             <div className="field">
                     <label className="label">YTH</label>
                     <div className="control">
-                        <input type="text" className="input" value={yth} onChange={(e => setYth(e.target.value))} placeholder='nama'/>
+                        <input type="text" className="input" value={yth} onChange={(e => setYth(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Dari</label>
                     <div className="control">
-                        <input type="text" className="input" value={dari} onChange={(e => setDari(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={dari} onChange={(e => setDari(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Hal</label>
                     <div className="control">
-                        <input type="text" className="input" value={hal} onChange={(e => setHal(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={hal} onChange={(e => setHal(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Lampiran</label>
                     <div className="control">
-                        <input type="text" className="input" value={lampiran} onChange={(e => setLampiran(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={lampiran} onChange={(e => setLampiran(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Tanggal</label>
                     <div className="control">
-                        <input type="text" className="input" value={tanggal} onChange={(e => setTanggal(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={tanggal} onChange={(e => setTanggal(e.target.value))} placeholder='YYYY-MM-DD  '/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Dalam rangka apa</label>
                     <div className="control">
-                        <input type="text" className="input" value={rangka} onChange={(e => setRangka(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={rangka} onChange={(e => setRangka(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Divisi</label>
                     <div className="control">
-                        <input type="text" className="input" value={divisi} onChange={(e => setDivisi(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={divisi} onChange={(e => setDivisi(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Kegiatan</label>
                     <div className="control">
-                        <input type="text" className="input" value={kegiatan} onChange={(e => seKegiatan(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={kegiatan} onChange={(e => seKegiatan(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Hari</label>
                     <div className="control">
-                        <input type="text" className="input" value={hari} onChange={(e => setHari(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={hari} onChange={(e => setHari(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Tanggal</label>
                     <div className="control">
-                        <input type="text" className="input" value={tanggalkegiatan} onChange={(e => setTanggalkegiatan(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={tanggalkegiatan} onChange={(e => setTanggalkegiatan(e.target.value))} placeholder='YYYY-MM-DD'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Atasan</label>
                     <div className="control">
-                        <input type="text" className="input" value={atasan} onChange={(e => setAtasan(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={atasan} onChange={(e => setAtasan(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">

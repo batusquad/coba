@@ -23,9 +23,12 @@ import Sukv from "./component/Sukv";
 import Surv from "./component/Surv";
 import Npv from "./component/Npv";
 import Lembarverif from "./file/Lembarverif";
+import "../src/style/app.css"
 import Layout from "./page/Layout";
 import Dashboard from "./page/Dashboard";
-
+import Realisasi from "./file/Realisasi";
+import Fail from "./file/Fail";
+import Ongoing from "./file/Ongoing";
 
 
 function App() {
@@ -55,6 +58,9 @@ function App() {
         <Route path="/surv" element={<Surv />} />
         <Route path="/Lembarverif" element={<Lembarverif />} />
         <Route path="/npv" element={<Npv />} />
+        <Route path="/Realisasi" element={<Realisasi />} />
+        <Route path="/Fail" element={<Fail />} />
+        <Route path="/Ongoing" element={<Ongoing />} />
       </Routes>
   );
 }

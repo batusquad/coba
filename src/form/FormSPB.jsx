@@ -37,31 +37,31 @@ const FormSPB = () => {
                 <div className="field">
                     <label className="label">Uraian</label>
                     <div className="control">
-                        <input type="text" className="input" value={uraian} onChange={(e => setUraian(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={uraian} onChange={(e => setUraian(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Vol</label>
                     <div className="control">
-                        <input type="text" className="input" value={vol} onChange={(e => setVol(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={vol} onChange={(e => setVol(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Satuan</label>
                     <div className="control">
-                        <input type="text" className="input" value={satuan} onChange={(e => setSatuan(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={satuan} onChange={(e => setSatuan(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Harga Satuan</label>
                     <div className="control">
-                        <input type="text" className="input" value={hargasatuan} onChange={(e => setHargasatuan(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={hargasatuan} onChange={(e => setHargasatuan(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">
                     <label className="label">Jumlah</label>
                     <div className="control">
-                        <input type="text" className="input" value={jumlah} onChange={(e => setJumlah(e.target.value))} placeholder='name'/>
+                        <input type="text" className="input" value={jumlah} onChange={(e => setJumlah(e.target.value))} placeholder='...'/>
                     </div>
                 </div>
                 <div className="field">

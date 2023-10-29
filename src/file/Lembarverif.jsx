@@ -1,10 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import rock from "../assets/rock.svg"
 import "../style/Lembarverif.css"
 import Layout from '../page/Layout'
-
+import axios from 'axios'
 
 const Lembarverif = () => {
+
+    const [users,setUser] = useState([]);
+
+    useEffect(() =>{
+        getUsers();
+    },[]);
+    const getUsers = async () =>{
+        const response = await axios.get('http://localhost:5014/suk');
+        setUser(response.data)
+    }
   return (
     <Layout>
         <div className="lv">
@@ -22,16 +32,12 @@ const Lembarverif = () => {
                 </div>
             </div>
             <br/>
+            {users.map((user,index)=> (
             <div className="isi2">
-                <p>Divisi :       
-                <input className="input1"></input>
-                </p>
+                <p>Divisi : {user.divisi} </p>
+                <p>Nama Kegiatan : {user.kegiatan} </p>
             </div>
-            <div className="isi2">
-                <p>Nama Kegiatan :       
-                <input className="input2"></input>
-                </p>
-            </div>
+            ))}
             <br/>
             <div className="tabel1">
                 <thead>

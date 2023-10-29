@@ -1,30 +1,47 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import rock from "../assets/rock.svg"
+import Layout from "../page/Layout";
 
 const SPB = () => {
-    const [users,setUser] = useState([]);
+    const [spbData, setSPBData] = useState([]);
+  const [usersData, setUsersData] = useState([]);
 
-    useEffect(() =>{
-        getUsers();
-    },[]);
-    const getUsers = async () =>{
-        const response = await axios.get('http://localhost:5014/spb');
-        setUser(response.data)
-    }
+  useEffect(() => {
+    // Ambil data SPB
+    axios.get("http://localhost:5014/spb")
+      .then((response) => {
+        setSPBData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching SPB data:", error);
+      });
+
+    // Ambil data users
+    axios.get("http://localhost:5014/users")
+      .then((response) => {
+        setUsersData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching users data:", error);
+      });
+  }, []);
+
+
     return(
-        
+        <Layout>
         <div id="content">
             <div className="sprr-1">
                 <div className="sprr">
                     <img src={rock} className="rock" />
-                    <div className="header-container">
+                    {usersData.map((user,index)=> (
+                    <div className="header-container" key={user.id}>
                         <h1 className="batu">Surat Pengajuan Biaya</h1>
-                        <input type="text" placeholder="Nama Kegiatan" />
-                        <br/>
-                        <input type="text" placeholder="Tanggal Kegiatan" />
+                        <p>{user.namakegiatan}</p>
+                        <p>{user.tanggalkegiatan}</p>
                         <p>Tahun 2023</p>
                     </div>
+                    ))}
                 </div>
                 <div className="spb-main">
                     <table>
@@ -39,14 +56,14 @@ const SPB = () => {
                             </tr>
                         </thead>
                         <tbody>
-                        {users.map((user,index)=> (
-                            <tr key={user.id}>
+                        {spbData.map((spb,index)=> (
+                            <tr key={spb.id}>
                                     <td>{index+1}</td>
-                                    <td>{user.uraian}</td>
-                                    <td>{user.vol}</td>
-                                    <td>{user.satuan}</td>
-                                    <td>{user.hargasatuan}</td>
-                                    <td>{user.jumlah}</td>
+                                    <td>{spb.uraian}</td>
+                                    <td>{spb.vol}</td>
+                                    <td>{spb.satuan}</td>
+                                    <td>{spb.hargasatuan}</td>
+                                    <td>{spb.jumlah}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -90,6 +107,7 @@ const SPB = () => {
                 </div>
             </div>
         </div>
+        </Layout>
     );
 };
 

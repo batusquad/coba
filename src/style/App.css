@@ -45,10 +45,14 @@
   margin: 0;
 }
 
-.btn-primary {
+.klik {
   display: block;
   margin: 0 auto;
   margin-top: 50px;
+}
+
+.verif{
+  margin:0;
 }
 
 /* Responsif - Mengubah tampilan pada perangkat berbeda */
@@ -60,3 +64,24 @@
 .wrapper{
   margin-top: 30px;
  }
+
+.dropdown {
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+ .dropdown:hover {
+  transform: scale(1.05);
+ }
+
+ .fail .table th{
+  text-align: center;
+ }
+
+#dropdown-basic{
+  margin-bottom: 20px;
+}
+
+.real .table th:not([align]) {
+  text-align: center;
+}
