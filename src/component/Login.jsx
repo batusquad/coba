@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import "../style/Login.css"
 import { LoginUser, reset } from '../features/authSlice';
-
 import { useNavigate } from 'react-router-dom';
+import "../style/Login.css"
 
 const Login = () => {
 
@@ -17,7 +16,7 @@ const Login = () => {
 
         useEffect(() => {
           if(user || isSuccess) {
-            navigate("/")
+            navigate("/dashboard")
           }
           dispatch(reset());
         }, [user, isSuccess, dispatch, navigate]);

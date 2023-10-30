@@ -1,24 +1,34 @@
-import React, { Component } from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
-import Layout from './Layout';
+import React, {useEffect} from 'react'
+import Layout from './Layout'
+import DropdownDashboard from '../form/Dropdown'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { getMe } from '../features/authSlice'
 
-class Dashboard extends Component {
-  render() {
-    return (
-          <Layout>
-            <div>
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic"> Pilih Status </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item href="Realisasi">Realisasi</Dropdown.Item>
-                        <Dropdown.Item href="Fail">Fail</Dropdown.Item>
-                        <Dropdown.Item href="Ongoing">On Going</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-            </div>
-            </Layout>
-    );
+const Dashboard = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {isError} = useSelector((state=> state.auth));
+
+  useEffect(() => {
+      dispatch(getMe());
+  }, [dispatch]);
+
+  useEffect(() => {
+      if(isError){
+        navigate("/");
+      }
+  }, [isError, navigate]);
+
+    
+  return (
+    <Layout>
+      <DropdownDashboard />
+    <div>
+      Mantap
+    </div>
+    </Layout>
+  )
   }
-}
 
-export default Dashboard;
+export default Dashboard

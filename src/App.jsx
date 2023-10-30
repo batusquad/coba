@@ -29,13 +29,14 @@ import Dashboard from "./page/Dashboard";
 import Realisasi from "./file/Realisasi";
 import Fail from "./file/Fail";
 import Ongoing from "./file/Ongoing";
+import Direktur from "./page/Direktur";
 
 
 function App() {
   return (
       <Routes>
         <Route path="/pra-usulan" element={<MainPage />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/FormNP" element={<FormNP />} />
         <Route path="/FormSPB" element={<FormSPB />} />
@@ -50,7 +51,7 @@ function App() {
         <Route path="/SPD" element={<SPD />} />
         <Route path="/SUK" element={<SUK />} />
         <Route path="/verifikator" element={<Home />} />
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/sprrv" element={<Sprrv />} />
         <Route path="/spbv" element={<Spbv />} />
         <Route path="/spdv" element={<Spdv />} />
@@ -61,6 +62,7 @@ function App() {
         <Route path="/Realisasi" element={<Realisasi />} />
         <Route path="/Fail" element={<Fail />} />
         <Route path="/Ongoing" element={<Ongoing />} />
+        <Route path="/direktur" element={<Direktur />} />
       </Routes>
   );
 }

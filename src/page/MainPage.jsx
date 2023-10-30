@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import CardNP from "../component/CardNP";
 import CardSUR from "../component/CardSUR";
 import CardSPB from "../component/CardSPB";
@@ -7,8 +7,25 @@ import CardSPD from "../component/CardSPD";
 import CardSUK from "../component/CardSUK";
 import Layout from './Layout'
 import "bulma/css/bulma.min.css"
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { getMe } from '../features/authSlice'
 
 const MainPage = () => {
+  const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const {isError} = useSelector((state=> state.auth));
+
+    useEffect(() => {
+        dispatch(getMe());
+    }, [dispatch]);
+
+    useEffect(() => {
+        if(isError){
+          navigate("/");
+        }
+    }, [isError, navigate]);
+    
   return (
     <Layout>
     <div className='wrapper'>
